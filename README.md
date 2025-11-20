@@ -34,11 +34,10 @@ NO : User gets a surprise
 ## 📂 Project Structure
 /project-folder
 │── index.html
-│── style.css      (optional - currently inline)
-│── Prediction of the Future   (YES)
-│── Surprise (NO)
+│── style.css (optional - used if you move styles out of HTML)
+│── Prediction of the future (YES).mp4 (YES video)
+│── Surprise (NO).mp4 (NO video)
 │── README.md
-
 🔧 How It Works (Logic Flow)
 When user clicks YES:
 
