@@ -3,41 +3,40 @@
 The Future Scanner is an interactive, funny web experience where users choose whether they want to see their “future”. Based on their choice, the website triggers animations, scanning effects, and the person gets the surprise based on their choices.
 
 ## 🚀 Features
-✅ Interactive Popup
+## ✅ Interactive Popup
 
 The website begins with a popup asking:
 “Wanna see your future with AI?”
 
-Two options:
+## Two options:
 
 Yes → Start scanning process
 
-No → Play an alternative MP4 video
+No → Gets a surprise
 
-✋ Handprint Scan Animation (12 seconds)
+## ✋ Fingerprint Scanner (9 seconds)
 
-Displays a glowing handprint.
+Scans the finger of the person.
 
 A scanning bar moves up and down.
 
-A blinking “Scanning your Fingers…” text creates a futuristic effect.
+A blinking “Scanning your Fingers…” text creates a amaing effect.
 
-After 12 seconds, the “future reveal” video begins playing automatically.
+After 9 seconds, the “future reveals”.
 
-🎥 Video Playback (Local MP4s)
+## 🎥 Outcomes
 
-YES video: plays after scanning animation ends
+YES : Future prediction after scanning
 
-NO video: plays immediately when a user presses “No”
+NO : User gets a surprise
 
-Both videos are played from local MP4 files (not YouTube embeds).
 
-📂 Project Structure
+## 📂 Project Structure
 /project-folder
 │── index.html
 │── style.css      (optional - currently inline)
-│── document_6122847523968129324.mp4   (YES video)
-│── no_video.mp4   (NO video)
+│── Prediction of the Future   (YES)
+│── Surprise (NO)
 │── README.md
 
 🔧 How It Works (Logic Flow)
@@ -53,24 +52,10 @@ After 12 seconds:
 
 Scanner disappears
 
-YES video is shown
+The user gets their future prediction
 
-Video begins playback automatically
-
-When user clicks NO:
+## When user clicks NO:
 
 Popup hides
 
-NO video (local MP4) appears
-
-Video plays immediately
-
-🛠 Technologies Used
-
-HTML5
-
-CSS3 (embedded styles)
-
-JavaScript
-
-Local video playback using <video> elements
+The user gets a surprise
