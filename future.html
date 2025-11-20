@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>AI Future Scanner</title>
+
+<style>
+    body {
+        background: #000;
+        color: white;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        overflow-x: hidden;
+    }
+
+    /* Popup */
+    #popup {
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 1000;
+    }
+
+    .btn-container {
+        display: flex;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .btn {
+        background: #0aff9d;
+        padding: 12px 28px;
+        border-radius: 8px;
+        font-size: 20px;
+        cursor: pointer;
+        border: none;
+    }
+
+    /* Handprint */
+    #handprint {
+        display: none;
+        width: 600px;
+        margin-top: 200px;
+        margin-left: 460px;
+        opacity: 0.9;
+        position: relative;
+    }
+
+    /* Scanner */
+    #scanner {
+        display: none;
+        position: relative;
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+        margin-top: -450px;
+    }
+
+    .scan-line {
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 300px;
+        height: 5px;
+        background: #0aff9d;
+        animation: scan 3s infinite alternate;
+    }
+
+    @keyframes scan {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(290px); }
+    }
+
+    .loading-text {
+        margin-top: 20px;
+        font-size: 20px;
+        animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+        50% { opacity: 0.3; }
+    }
+
+    /* Video */
+    .video-player {
+        display: none;
+        width: 600px;
+        height: 400px;
+        margin-top: 200px;
+        margin-left: 480px;
+    }
+</style>
+</head>
+<body>
+
+    <div id="popup">
+        <h1>Wanna see your future with AI?</h1>
+        <div class="btn-container">
+            <button class="btn" onclick="startExperience()">Yes</button>
+            <button class="btn" onclick="playNoVideo()">No</button>
+        </div>
+    </div>
+
+    <!-- Handprint -->
+    <img id="handprint" 
+         src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.istockphoto.com%2Fvectors%2Fhand-scan-handprint-finger-print-in-technological-theme-futuristic-vector-id957612348%3Fk%3D6%26m%3D957612348%26s%3D612x612%26w%3D0%26h%3DftOcI8DOFP53MKzX-Zq3K1GbBm5A5apLCTTUOvuKI-k%3D&f=1&nofb=1" 
+         alt="Handprint">
+
+    <!-- Scanner -->
+    <div id="scanner">
+        <div class="scan-line"></div>
+        <p class="loading-text">Scanning your Fingers...</p>
+    </div>
+
+    <!-- YES video (No autoplay at start!) -->
+    <video id="future-video" class="video-player" controls>
+        <source src="document_6122847523968129326.mp4" type="video/mp4">
+    </video>
+
+    <!-- NO video (Local MP4) -->
+    <video id="no-video" class="video-player" controls>
+        <source src="document_6122847523968129325.mp4" type="video/mp4">
+    </video>
+
+<script>
+function startExperience() {
+    document.getElementById("popup").style.display = "none";
+
+    document.getElementById("handprint").style.display = "block";
+    document.getElementById("scanner").style.display = "block";
+
+    // After 12 seconds → Hide scan → Play video
+    setTimeout(() => {
+        document.getElementById("handprint").style.display = "none";
+        document.getElementById("scanner").style.display = "none";
+
+        const vid = document.getElementById("future-video");
+        vid.style.display = "block";
+
+        // User clicked "Yes", so this click counts as a gesture → safe to play
+        vid.play();
+    }, 9000);
+}
+
+function playNoVideo() {
+    document.getElementById("popup").style.display = "none";
+
+    const vid = document.getElementById("no-video");
+    vid.style.display = "block";
+    vid.currentTime = 0;
+    vid.play();
+}
+</script>
+
+</body>
+</html>
